@@ -79,7 +79,7 @@ void engine_thread()
 {
 	while (true)
 	{
-		game::GWorld = driver.read<uint64_t>(global->base + 0x7FE3C50);
+		game::GWorld = driver.read<uint64_t>(global->base + 0x7FF0840);
 
 		if (!game::GWorld)
 		{
@@ -173,7 +173,7 @@ void engine_thread()
 		if (!NamePoolData)
 		{
 			NamePoolData = new FNamePool();
-			driver.readm((void*)(global->base + 0x7DE4500), NamePoolData, sizeof(FNamePool));
+			driver.readm((void*)(global->base + 0x7DF1100), NamePoolData, sizeof(FNamePool));
 		}
 
 		TArray actor_array = driver.read<TArray<uint64_t>>(game::PersistentLevel + 0xA8);
