@@ -4,8 +4,8 @@
 
 bool get_key_state(int key, int flag)
 {
-		if (FindWindowA("UnrealWindow", 0) != GetForegroundWindow())
-			return false;
+		/*if (FindWindowA("UnrealWindow", 0) != GetForegroundWindow()) seems broken when trying to find window now 
+			return false;*/
 
 	clock_t	c = clock();
 	static BYTE			btKeyState[0x100] = { 0 };
